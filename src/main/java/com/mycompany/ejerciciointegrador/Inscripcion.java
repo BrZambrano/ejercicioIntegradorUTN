@@ -10,9 +10,9 @@ public class Inscripcion {
     
     //Constructor
     public Inscripcion (Alumno a, Materia m, LocalDateTime f){
-        alumno= a;
-        materia= m;
-        fecha= f;
+        this.alumno= a;
+        this.materia= m;
+        this.fecha= f;
     }
     
     //Comandos
@@ -36,17 +36,8 @@ public class Inscripcion {
     public LocalDateTime obtenerFecha(){
         return fecha;
     }
-    public boolean aprobada(){
-        int tamanio= materia.obtenerTamanioCorrelativas();
-        int i=0;
-        aprobada= true;
-        
-        while(aprobada || i<tamanio){
-            if (!(materia.correlativas.get(i).equals(alumno.materiasAprobadas.get(i)))){
-                aprobada= false;
-            }
-            i++;
-        }
+    public boolean aprobada(boolean respuesta){
+        aprobada= respuesta;
         return aprobada;
     }
 }

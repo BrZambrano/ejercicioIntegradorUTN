@@ -8,8 +8,8 @@ public class Alumno{
 
     //Constructor
     public Alumno(String n, int l){
-        nombre= n;
-        legajo= l;
+        this.nombre= n;
+        this.legajo= l;
     }
     
     //Consultas

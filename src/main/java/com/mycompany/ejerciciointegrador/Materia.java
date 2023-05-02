@@ -9,21 +9,27 @@ public class Materia{
     
     //Constructor
     public Materia(String n){
-        nombre= n;
+        this.nombre= n;
         //this.id= id;
     }
     
     //Métodos
     public boolean puedeCursar(Alumno alumno){
-        //desarrollar
-        return true;
+        boolean cumple= false;
+        int i=0;
+        while(!cumple){
+            if (correlativas.get(i).equals(alumno.materiasAprobadas.get(i))){
+                cumple= true;
+            }
+            i++;
+        }
+        return cumple;
     }
+    
     public String obtenerNombre(){
         return nombre;
     }
-    /*public int obtenerId(){
-        return id;
-    }*/
+    
     public int obtenerTamanioCorrelativas(){
         return correlativas.size();
     }
